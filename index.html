@@ -339,7 +339,7 @@
       <button class="icon-btn" id="themeBtn" title="Сменить тему">🌙</button>
     </div>
     <h1>Бланк ответов</h1>
-    <p>Репетиционное тестирование · Часть А — выбор ответа, Часть Б — ввод ответа</p>
+    <p>Репетиционное тестирование · Часть А — выбор ответа, Часть В — ввод ответа</p>
   </header>
 
   <!-- МЕНЮ ВВОДА ПРАВИЛЬНЫХ ОТВЕТОВ -->
@@ -349,7 +349,7 @@
       Введите ключи для выбранного предмета одной строкой. Разделитель заданий — <code>:</code>,
       номер отделяется от ответа первым <code>-</code> (или <code>=</code>).
       Несколько вариантов в части А — через запятую. Отрицательное число: <code>В3--19</code> или <code>В3=-19</code>.<br>
-      Пример: <code>А1-5:А2-4:А6-1,3,4:В1-А4Б2В5:В2-134:В3--19</code><br>
+      Пример: <code>А1-5:А2-4:А6-1,3,4:В1-А4В2В5:В2-134:В3--19</code><br>
       Ключи сохраняются отдельно для каждого предмета. Переключайте предмет ниже 👇
     </div>
     <div class="chips" id="keysChips"></div>
@@ -358,7 +358,7 @@
       <span class="keys-status-dot" id="keysStatusDot"></span>
     </div>
     <textarea class="keys-textarea" id="keysTextarea" spellcheck="false"
-      placeholder="А1-5:А2-4:А3-5:...:В1-А4Б2В5:В2-134:..."></textarea>
+      placeholder="А1-5:А2-4:А3-5:...:В1-А4В2В5:В2-134:..."></textarea>
     <div class="keys-actions">
       <button class="keys-btn save" id="keysSaveBtn">💾 Сохранить</button>
       <button class="keys-btn clear" id="keysClearBtn">Очистить</button>
@@ -382,11 +382,11 @@
     <div id="partA"></div>
   </section>
 
-  <!-- ЧАСТЬ Б -->
+  <!-- ЧАСТЬ В -->
   <section class="part">
     <div class="part-title">
-      <div class="badge">Б</div>
-      <h2>Часть Б<span id="partBDesc">Впишите ответ в поле</span></h2>
+      <div class="badge">В</div>
+      <h2>Часть В<span id="partBDesc">Впишите ответ в поле</span></h2>
     </div>
     <div id="partB"></div>
   </section>
@@ -942,7 +942,7 @@ function showResults(subj, primary, maxPrimary, testScore, stats, details, noKey
   }
   document.getElementById('resDetails').innerHTML =
     `<div class="res-section-title">Часть А</div><div class="res-list">${details.A.map(d=>itemHTML('А',d)).join('')}</div>` +
-    `<div class="res-section-title">Часть Б</div><div class="res-list">${details.B.map(d=>itemHTML('В',d)).join('')}</div>`;
+    `<div class="res-section-title">Часть В</div><div class="res-list">${details.B.map(d=>itemHTML('В',d)).join('')}</div>`;
 
   hideRestartConfirm();
   resultsOverlay.classList.remove('hidden');
